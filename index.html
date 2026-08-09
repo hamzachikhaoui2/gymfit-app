@@ -1,0 +1,54 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+<title>GymFit</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="GymFit" />
+<meta name="theme-color" content="#f4f8f7" />
+<link rel="preload" href="fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/dmsans-var.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="style.css" />
+
+<div id="lock-screen" class="lock-screen">
+  <div class="lock-box">
+    <div class="lock-mark">GymFit</div>
+    <p>Enter passphrase to continue</p>
+    <input id="lock-input" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" />
+    <button id="lock-submit">Unlock</button>
+    <p id="lock-error" class="lock-error"></p>
+  </div>
+</div>
+
+<div class="app" id="app-root" hidden>
+  <header class="app-header">
+    <h1>GymFit</h1>
+    <p class="tagline">7-Day Recomposition · VO2max · Posture Protocol</p>
+  </header>
+
+  <main class="content">
+    <div id="view-today" class="view active"></div>
+    <div id="view-week" class="view"></div>
+    <div id="view-nutrition" class="view"></div>
+    <div id="view-recovery" class="view"></div>
+  </main>
+
+  <nav class="tabbar">
+    <div class="tab-indicator"></div>
+    <button class="tab active" data-tab="today">
+      <span class="tab-icon">☀️</span><span>Today</span>
+    </button>
+    <button class="tab" data-tab="week">
+      <span class="tab-icon">📅</span><span>Week</span>
+    </button>
+    <button class="tab" data-tab="nutrition">
+      <span class="tab-icon">🍽️</span><span>Nutrition</span>
+    </button>
+    <button class="tab" data-tab="recovery">
+      <span class="tab-icon">🧖</span><span>Recovery</span>
+    </button>
+  </nav>
+</div>
+
+<script src="lock.js"></script>
